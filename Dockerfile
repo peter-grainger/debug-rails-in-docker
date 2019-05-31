@@ -1,14 +1,16 @@
 FROM ruby:2.6.3-alpine3.9
 
-RUN apk add --no-cache build-base
+ENV APP_DIR=/opt/app
 
-RUN mkdir -p /opt/app
+RUN apk add --no-cache build-base postgresql-dev
 
-COPY src /opt/app
+RUN mkdir -p ${APP_DIR}
 
-WORKDIR /opt/app
+COPY src ${APP_DIR}
 
-RUN bundle
+WORKDIR ${APP_DIR}
+
+RUN bundle install
 
 
 

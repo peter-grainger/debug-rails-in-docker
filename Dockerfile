@@ -6,10 +6,15 @@ RUN apk add --no-cache build-base postgresql-dev nodejs tzdata git
 
 RUN mkdir -p ${APP_DIR}
 
-COPY src ${APP_DIR}
+
 
 WORKDIR ${APP_DIR}
 
+COPY src/Gemfile src/Gemfile.lock ${APP_DIR}/
+
 RUN bundle install
+
+COPY src ${APP_DIR}
+
 
 CMD ["bundle", "exec", "rdebug-ide", "--port", "1236", "--dispatcher-port", "26162", "--host", "0.0.0.0", "--", "/usr/local/bundle/bin/rails", "-p", "8080", "-b", "'0.0.0.0'"]

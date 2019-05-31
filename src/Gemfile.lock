@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/peter-grainger/ruby-debug-ide
-  revision: 824266c9df73c8964549e81a29fcbb3e66a30003
+  remote: https://github.com/ViugiNick/ruby-debug-ide.git
+  revision: 3099814624fac26736a2486436ca02275fb3b485
+  branch: so_reuseport
   specs:
     ruby-debug-ide (0.7.0.beta7)
       rake (>= 0.8.1)

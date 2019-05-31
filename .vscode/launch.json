@@ -11,7 +11,7 @@
       "remoteHost": "localhost",
       "remotePort": "1236",
       "remoteWorkspaceRoot": "/opt/app",
-      "cwd": "${workspaceRoot}/host_app"
+      "cwd": "${workspaceRoot}/src"
 
     }
   ]

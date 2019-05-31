@@ -7,12 +7,11 @@ RUN apk add --no-cache build-base postgresql-dev nodejs tzdata git
 RUN mkdir -p ${APP_DIR}
 
 
-
 WORKDIR ${APP_DIR}
 
-COPY src/Gemfile src/Gemfile.lock ${APP_DIR}/
+COPY src/Gemfile ${APP_DIR}/
 
-RUN bundle install
+RUN bundle
 
 COPY src ${APP_DIR}
 

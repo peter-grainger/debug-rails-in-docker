@@ -12,10 +12,4 @@ WORKDIR ${APP_DIR}
 
 RUN bundle install
 
-#CMD ["bundle", "exec", "rdebug-ide", "--port", "1236", "--dispatcher-port", "26162", "--host", "0.0.0.0", "--", "bin/rails", "-p", "8040", "-b", "'0.0.0.0'"]
-CMD tail -f /etc/hosts
-
-
-
-
-
+CMD ["bundle", "exec", "rdebug-ide", "--port", "1236", "--dispatcher-port", "26162", "--host", "0.0.0.0", "--", "/usr/local/bundle/bin/rails", "-p", "8080", "-b", "'0.0.0.0'"]
